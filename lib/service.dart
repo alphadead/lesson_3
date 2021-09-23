@@ -1,10 +1,9 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
+import 'package:http/http.dart' as http;
 import 'package:lesson_3/model.dart';
 import 'package:logger/logger.dart';
-import 'package:http/http.dart' as http;
 
 class MovieService extends ChangeNotifier {
   List<Result> _movies = [];
@@ -12,12 +11,12 @@ class MovieService extends ChangeNotifier {
   MovieResponse get movieResponse => _movieResponse;
   List<Result> get movies => _movies;
 
-  void set movies(value) {
+  set movies(value) {
     _movies = value;
     notifyListeners();
   }
 
-  void set movieResponse(value) {
+  set movieResponse(value) {
     _movieResponse = value;
     notifyListeners();
   }
